@@ -33,6 +33,17 @@ func ParseLevel(lvl string) (logrus.Level, error) {
 	return logrus.ParseLevel(lvl)
 }
 
+// SetLevelString takes in the log level in string format
+// some of valid values: error, info, debug ...
+func SetLevelString(lvlStr string) error {
+	level, err := ParseLevel(lvlStr)
+	if err != nil {
+		return err
+	}
+	SetLevel(level)
+	return nil
+}
+
 // SetLevel sets the log level
 func SetLevel(lvl logrus.Level) {
 	stdoutLogger.Level = lvl
