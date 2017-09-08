@@ -28,6 +28,11 @@ func Errorf(format string, args ...interface{}) {
 	stderrLogger.Errorf(format, args...)
 }
 
+// Fatalf is wrapper for logrus.Fatalf to print to stderr
+func Fatalf(format string, args ...interface{}) {
+	stderrLogger.Fatalf(format, args...)
+}
+
 // ParseLevel takes a string level and returns the Logrus log level constant.
 func ParseLevel(lvl string) (logrus.Level, error) {
 	return logrus.ParseLevel(lvl)
