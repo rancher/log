@@ -4,11 +4,11 @@
 
 This package provides only the following:
 
-* Sends Infof, Debugf messages to `stdout`.
-* Sends Errorf messages to go `stderr`.
+* Sends Info, Debug, Infof, Debugf messages to `stdout`.
+* Sends Error, Errorf messages to go `stderr`.
 * Allow the set the log level.
 
-All other things are not supported because I only care about Infof, Debugf and Errorf.
+All other things are not supported. PRs are welcome!
 
 Example: https://github.com/leodotcloud/log-example
 

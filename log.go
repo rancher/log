@@ -13,6 +13,31 @@ func init() {
 	stderrLogger.Out = os.Stderr
 }
 
+// Info is wrapper for logrus.Info to print to stdout
+func Info(args ...interface{}) {
+	stdoutLogger.Info(args...)
+}
+
+// Debug is wrapper for logrus.Debug to print to stdout
+func Debug(args ...interface{}) {
+	stdoutLogger.Debug(args...)
+}
+
+// Error is wrapper for logrus.Error to print to stderr
+func Error(args ...interface{}) {
+	stderrLogger.Error(args...)
+}
+
+// Fatal is wrapper for logrus.Fatal to print to stderr
+func Fatal(args ...interface{}) {
+	stderrLogger.Fatal(args...)
+}
+
+// Warn is wrapper for logrus.Warn to print to stderr
+func Warn(args ...interface{}) {
+	stderrLogger.Warn(args...)
+}
+
 // Infof is wrapper for logrus.Infof to print to stdout
 func Infof(format string, args ...interface{}) {
 	stdoutLogger.Infof(format, args...)
@@ -31,6 +56,11 @@ func Errorf(format string, args ...interface{}) {
 // Fatalf is wrapper for logrus.Fatalf to print to stderr
 func Fatalf(format string, args ...interface{}) {
 	stderrLogger.Fatalf(format, args...)
+}
+
+// Warnf is wrapper for logrus.Warnf to print to stderr
+func Warnf(format string, args ...interface{}) {
+	stderrLogger.Warnf(format, args...)
 }
 
 // ParseLevel takes a string level and returns the Logrus log level constant.
