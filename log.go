@@ -1,8 +1,10 @@
 package log
 
 import (
-	"github.com/sirupsen/logrus"
 	"os"
+	"io"
+
+	"github.com/sirupsen/logrus"
 )
 
 var stdoutLogger = logrus.New()
@@ -11,6 +13,11 @@ var stderrLogger = logrus.New()
 func init() {
 	stdoutLogger.Out = os.Stdout
 	stderrLogger.Out = os.Stderr
+}
+
+func SetOutput(out io.Writer) {
+	stdoutLogger.Out = out
+	stderrLogger.Out = out
 }
 
 // Info is wrapper for logrus.Info to print to stdout
