@@ -13,6 +13,11 @@ func init() {
 	stderrLogger.Out = os.Stderr
 }
 
+func SetOutput(out io.Writer) {
+	stdoutLogger.Out = out
+	stderrLogger.Out = out
+}
+
 // Info is wrapper for logrus.Info to print to stdout
 func Info(args ...interface{}) {
 	stdoutLogger.Info(args...)
