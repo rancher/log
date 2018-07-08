@@ -1,8 +1,10 @@
 package log
 
 import (
-	"github.com/Sirupsen/logrus"
+	"io"
 	"os"
+
+	"github.com/Sirupsen/logrus"
 )
 
 var stdoutLogger = logrus.New()
